@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+
+let a={"id":"292","name":"yolo","gadgets":[]}
+a["messageType"]="REGISTER"
+a["gadgets"]=[{
+    "name":"abc","type":"DIG","state":"ON"
+},{
+    "name":"babc","type":"DIG","state":"ON"
+}]
+let js=JSON.stringify(a)
+let ws=new WebSocket('ws://localhost:4292/Register');
+setTimeout(()=>ws.send(js),100)
+ws.onmessage=(msg)=>
+{   let ss=JSON.parse(msg.data);
+    ss["messageType"]="stateChanged";
+    ws.send(JSON.stringify(ss));
+
+}
+</script>
+</body>
+</html>

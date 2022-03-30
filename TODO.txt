@@ -1,0 +1,19 @@
+Intital Review Tasks:
+
+	By March End:
+	1.)Devices must be able to register to the server
+	2.)Devices must be respond to a message event and act accordingly to 
+	   the change
+	3.)In case of loss of connection the device must be able to reconnect
+	   to the server 
+	
+	1.Clients must be able to register to the server
+	2.)Clients must be able to see all the devices connected to the server
+	3.)Clients must be able to select a device and change its state
+
+	On the Device end:
+		-->Provide Class for communication with server
+		-->Provide an abstract class for gadget definition
+
+	
+		

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIoT</title>
+    <link rel="stylesheet" href="/public/index.css">
+</head>
+<body>
+    <div class="Notification">Project under gone in 6th semseter</div>
+    <main id="swup" class="main devices transition-fade">
+        <span class="MainHeader">Device Control</span>
+        <span class="MainHeader DeviceHeader">Name:Living Room</span>
+        <div class="gadget device">
+            <span class="DeviceHeader">Name:LEDLIGHT</span>
+            <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        </div>
+        <div class="gadget device">
+            <span class="DeviceHeader">Name:LEsDLIGHT</span>
+            <label class="switch">
+            <input type="checkbox" onclick="doSomething(this)">
+            <span class="slider round"></span>
+        </label>
+        </div>
+         
+    </main>
+    
+    <div class="footer">Provide easy access to devices in minutes</div>
+    <script >
+        function doSomething(e)
+        {
+            console.log(e.checked);
+        }
+
+    </script>
+    <script src="/swup.js"></script>
+    <script src="/index.js"></script>
+</body>
+</html>

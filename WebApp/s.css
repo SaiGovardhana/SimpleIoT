@@ -1,0 +1,34 @@
+.transition-swipe{
+    transform: translateX(0);
+    transition-duration: 400ms;
+    opacity: 1s;
+}
+
+html.is-animating .transition-swipe
+{
+        opacity: 0;
+
+}
+body{
+    background-color: yellow;
+}
+.page1
+{   width: 100vw;
+    height:100vh;
+    background-color: aqua;
+}
+.page2
+{   width: 100vw;
+    height: 100vh;
+    background-color: red;
+}
+.page3{
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+}
+html.is-leaving .transition-swipe
+{
+    opacity: 0;
+}
+

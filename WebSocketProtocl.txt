@@ -1,0 +1,17 @@
+General JSON format:
+	messageType:
+
+Connections Must send a messageType:PING 
+	Every 2 seconds to prevent disconnection due to timeout	
+
+Registering a device:/Register
+	
+	messageType:REGISTER
+	id: ANY UNIQUI ID
+	nameE:NAME OF THE DEVICE
+	gadgets: [{name:string,type:string,state:string},.... ]
+
+
+
+	
+	

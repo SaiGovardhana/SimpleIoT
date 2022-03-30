@@ -1,0 +1,7 @@
+NodeMcu:
+
+	Add in prefences additional Board
+		http://arduino.esp8266.com/stable/package_esp8266com_index.json
+	WebSockets:
+		GitHub
+			https://github.com/gilmaimon/ArduinoWebsockets/
