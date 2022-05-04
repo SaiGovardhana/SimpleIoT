@@ -35,7 +35,7 @@ public class App {
             cfg.wsFactoryConfig(
             wsCfg->{
 
-                wsCfg.getPolicy().setIdleTimeout(7000);
+                wsCfg.getPolicy().setIdleTimeout(70000);
             }    
 
             );
