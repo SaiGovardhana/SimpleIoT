@@ -237,3 +237,23 @@ html.is-animating .transition-fade
       align-items: center;
     }
   }
+
+  .mytext
+  {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: green;
+    font-size: 1em;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    padding-top: 5px;
+  }
+  input[type="text"]:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}

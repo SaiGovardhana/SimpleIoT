@@ -16,9 +16,12 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
         <div class="gadget device" th:each=" gadget: ${device.gadgets}">
             <span class="DeviceHeader">Name:<span th:text="${gadget.key}"></span></span>
             <label class="switch"  th:if='${gadget.value.type == "DIG"}'>
-            <input onchange="onGadgetChanged(this)"  th:data-name="${gadget.key}" th:data-type="${gadget.value.type}" th:data-state="${gadget.value.state}" type="checkbox" th:checked='${gadget.value.state == "ON"}' >  
-            <span class="slider round"></span>
-        </label>
+                <input onchange="onGadgetChanged(this)"  th:data-name="${gadget.key}" th:data-type="${gadget.value.type}" th:data-state="${gadget.value.state}" type="checkbox" th:checked='${gadget.value.state == "ON"}' >  
+                <span class="slider round"></span>
+            </label>
+            <!--New Code  -->
+            <input type="text" class="mytext" th:value="${gadget.value.state}" th:data-name="${gadget.key}" th:data-type="${gadget.value.type}" th:data-state="${gadget.value.state}" oninput="onGadgetChanged(this)" th:if='${gadget.value.type == "LCD"}'>
+
         </div>
       
     </main>

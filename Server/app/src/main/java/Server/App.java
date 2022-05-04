@@ -19,7 +19,7 @@ import io.javalin.http.staticfiles.Location;
 public class App {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         Javalin app=Javalin.create(
            cfg->{
 
@@ -35,7 +35,7 @@ public class App {
             cfg.wsFactoryConfig(
             wsCfg->{
 
-                wsCfg.getPolicy().setIdleTimeout(10000);
+                wsCfg.getPolicy().setIdleTimeout(7000);
             }    
 
             );
@@ -55,6 +55,8 @@ public class App {
             if(d==null)
             {
                 System.out.println("DEVICe is null");
+                ctx.render("/error.html");    
+                return ;
             }
             ctx.render("/device.html",s);
         }

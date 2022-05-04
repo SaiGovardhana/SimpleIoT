@@ -24,6 +24,10 @@ function onGadgetChanged(curObject)
             curObject.dataset.state="OFF";
         }
     }
+    if(curObject.dataset.type=='LCD')
+    {
+        curObject.dataset.state=curObject.value;
+    }
     let json={"messageType":"changeState",state:curObject.dataset.state,"name":curObject.dataset.name,"type":curObject.dataset.type};
     console.log(json);
     if(currentDeviceWebSocket!=null)
@@ -78,6 +82,15 @@ function updateState(newState)
                             else
                                 devices[z].checked=true;
                         }
+            }
+            if(type=="LCD")
+            {
+                for(let z=0;z<devices.length;z++)
+                if(devices[z].dataset.name==name)
+                    {
+                        devices[z].dataset.state=state;
+                        devices[z].value=state;
+                    }
             }
         }
 

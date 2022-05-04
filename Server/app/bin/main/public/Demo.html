@@ -1,23 +1,32 @@
 <html>
     <body>
+        <div style="font-size: 50px; font-weight: bolder; text-align: center;" id="dis"></div>
+
         <script>
 
-let a={"id":"292","name":"yolo","gadgets":[]}
+let a={"id":"292","name":"Living Room","gadgets":[]}
 a["messageType"]="REGISTER"
 a["gadgets"]=[{
-    "name":"abc","type":"DIG","state":"ON"
+    "name":"Home Screen","type":"LCD","state":"ON"
 },{
-    "name":"babc","type":"DIG","state":"ON"
+    "name":"Light Bulb","type":"DIG","state":"ON"
 }]
 let js=JSON.stringify(a)
 let ws=new WebSocket('ws://localhost:4292/Register');
-setTimeout(()=>ws.send(js),100)
+setTimeout(()=>ws.send(js),500)
 ws.onmessage=(msg)=>
 {   let ss=JSON.parse(msg.data);
+    console.log(ss);
     ss["messageType"]="stateChanged";
+    for(let i=0;i<a["gadgets"].length;i++)
+        if(a["gadgets"][i]["name"]==ss["name"])
+            {
+                a["gadgets"][i]["state"] = ss["state"];
+                document.querySelector('#dis').innerHTML=`id is ${a.id} name is ${a.name}<br>`+JSON.stringify(a["gadgets"]);
+            }
     ws.send(JSON.stringify(ss));
-
 }
+document.querySelector('#dis').innerHTML=`id is ${a.id} name is ${a.name}<br>`+JSON.stringify(a["gadgets"]);
 </script>
 </body>
 </html>

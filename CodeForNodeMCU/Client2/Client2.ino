@@ -91,7 +91,7 @@ class Device
 
 
 WebsocketsClient clients;
-Device d("1","Living Room");
+Device d("2","Bed Room");
 long startTime=millis();
 
 void onMessageCall(WebsocketsMessage msg)
@@ -117,9 +117,9 @@ void onEventsCallback(WebsocketsEvent event, String data) {
     }
 }
 void setup()
-{ d.addDevice("RED_LED","DIG",15,"ON");
-  d.addDevice("GREEN_LED","DIG",4,"ON");
-  d.addDevice("BLUE_LED","DIG",5,"ON");
+{ 
+  d.addDevice("BLUE_LED","DIG",4,"ON");
+  d.addDevice("BUZZER","DIG",5,"OFF");
   Serial.begin(115200);
   Serial.println();
 
