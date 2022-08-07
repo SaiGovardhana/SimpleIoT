@@ -1,6 +1,0 @@
-Registering a device Procedure:
-Device sends
-1.)Server sends INFO messages to device
-2.)Type Of Request[ REGISTER OR STATUS ];id;name;List of Gadgets 
-3.)It is parsed and saved in DeviceManager
-4.)On disconnect delete from devicemanager
